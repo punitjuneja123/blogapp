@@ -1,0 +1,35 @@
+.yourblogCard {
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 15px;
+  gap: 20px;
+}
+.blogTitleDiv > p {
+  font-size: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-top: 3px;
+}
+
+.EDbuttonsDiv {
+  display: flex;
+  gap: 10px;
+}
+.EDbuttonsDiv > button:nth-child(1) {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 4px 7px;
+  cursor: pointer;
+}
+.EDbuttonsDiv > button:nth-child(2) {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 4px 7px;
+  cursor: pointer;
+}

@@ -1,0 +1,39 @@
+.postForm {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 30%;
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.postForm > input {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+.postForm > textarea {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+.postForm > select {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+.postForm > div {
+  text-align: center;
+}
+
+.postForm input[type="submit"] {
+  background-color: rgb(29, 205, 211);
+  color: white;
+  padding: 5px 15px;
+  width: 120px;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+}

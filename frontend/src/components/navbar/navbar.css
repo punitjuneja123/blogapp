@@ -1,0 +1,56 @@
+.navBarContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10%;
+  background-color: rgb(237, 237, 237);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.appName {
+  color: rgb(29, 205, 211);
+}
+
+.loginSignupBtn {
+  background-color: rgb(29, 205, 211);
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  align-self: center;
+}
+
+.loginSignupLink {
+  color: white;
+  text-decoration: none;
+}
+
+/* user btns after login */
+.userDiv {
+  display: flex;
+  gap: 10px;
+}
+
+.userDiv > button {
+  padding: 5px 10px;
+}
+
+.postBlogBtn,
+.userBlogsBtn {
+  background-color: rgb(29, 205, 211);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.postBlogBtn:hover,
+.userBlogsBtn:hover {
+  background-color: rgb(19, 225, 232);
+}
+
+.logoutBtn {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background-color: rgb(254, 80, 80);
+}

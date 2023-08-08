@@ -1,0 +1,39 @@
+.editForm {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 30%;
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.editForm > input {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+.editForm > textarea {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+.editForm > select {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+.editForm > div {
+  text-align: center;
+}
+
+.editForm input[type="submit"] {
+  background-color: rgb(29, 205, 211);
+  color: white;
+  padding: 5px 15px;
+  width: 70px;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+}

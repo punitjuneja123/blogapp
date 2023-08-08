@@ -1,0 +1,25 @@
+.blogContainer {
+  margin: auto;
+  margin-top: 50px;
+  width: 60%;
+}
+.blogImageDiv {
+  text-align: center;
+}
+.blogImageDiv > img {
+  width: 80%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.RBcontentDiv {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.RBcontentDiv > h1 {
+  font-size: 20px;
+}
+.RBcontentDiv > p {
+  font-size: 15px;
+  margin-top: 20px;
+}
