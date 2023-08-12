@@ -10,7 +10,10 @@ function BlogsCard({ blog }) {
   return (
     <div className="blogCard">
       <div className="blogImgDiv">
-        <img src={`http://13.53.207.156:4500/images/${blog.image}`} alt="" />
+        <img
+          src={`http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500/images/${blog.image}`}
+          alt=""
+        />
       </div>
       <div className="blogContentDiv">
         <h1>{blog.title}</h1>

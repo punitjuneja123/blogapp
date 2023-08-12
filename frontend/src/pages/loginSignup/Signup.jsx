@@ -4,7 +4,8 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 function Signup() {
-  let baseURL = "http://13.53.207.156:4500";
+  let baseURL =
+    "http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500";
   const navigate = useNavigate();
 
   // getting data from signupform

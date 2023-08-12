@@ -27,7 +27,7 @@ function YourPost() {
 
   async function deletePost(id) {
     let checkDltStatus = await fetch(
-      `http://13.53.207.156:4500/blog/deleteblog/${id}`,
+      `http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500/blog/deleteblog/${id}`,
       {
         method: "DELETE",
         headers: {

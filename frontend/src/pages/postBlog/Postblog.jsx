@@ -7,7 +7,8 @@ import axios from "axios";
 
 function Postblog() {
   const navigate = useNavigate();
-  let baseURL = "http://13.53.207.156:4500";
+  let baseURL =
+    "http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500";
   // getting data form form
   const postFormHandler = (e) => {
     e.preventDefault();

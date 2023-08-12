@@ -7,7 +7,9 @@ function ViewBlog() {
   const params = useParams();
   const [blogData, setBlogData] = useState({});
   useEffect(() => {
-    fetch(`http://13.53.207.156:4500/blog/${params.blogID}`)
+    fetch(
+      `http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500/blog/${params.blogID}`
+    )
       .then((res) => res.json())
       .then((data) => setBlogData(data))
       .catch((err) => console.log(err));
@@ -22,7 +24,7 @@ function ViewBlog() {
       <div className="blogContainer">
         <div className="blogImageDiv">
           <img
-            src={`http://13.53.207.156:4500/images/${blogData.image}`}
+            src={`http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500/images/${blogData.image}`}
             alt=""
           />
         </div>

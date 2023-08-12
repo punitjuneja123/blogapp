@@ -9,7 +9,9 @@ function Homepage() {
 
   useEffect(() => {
     axios
-      .get("http://13.53.207.156:4500/blog")
+      .get(
+        "http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500/blog"
+      )
       .then((data) => setBlogData(data.data))
       .catch((err) => console.log(err));
   }, []);
