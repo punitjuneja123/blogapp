@@ -26,6 +26,7 @@ const upload = multer({ storage: storage });
 blogPRRouter.post("/post", upload.single("image"), async (req, res) => {
   let payload = req.body;
   payload.author_id = payload.userID;
+  payload.author_name = payload.userName;
   payload.image = req.file.filename;
   console.log(req.file, req.body);
   try {
@@ -69,11 +70,11 @@ blogPRRouter.delete("/deleteblog/:blogid", async (req, res) => {
 });
 
 // update post
-blogPRRouter.patch("/updateblog/:blogid ", async (req, res) => {
+blogPRRouter.patch("/updateblog/:blogID", async (req, res) => {
   let author_id = req.body.userID;
   let payload = req.body;
-  console.log(author_id);
-  let blogid = req.params.blogid;
+  console.log(req.body);
+  let blogid = req.params.blogID;
   try {
     const blogData = await blog.findOne({ where: { id: blogid } });
     if (blogData.author_id == author_id) {

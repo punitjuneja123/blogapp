@@ -37,3 +37,14 @@
   margin-top: 15px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 850px) {
+  .postForm {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .postForm {
+    width: 80%;
+  }
+}

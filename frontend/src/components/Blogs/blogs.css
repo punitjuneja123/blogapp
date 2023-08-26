@@ -34,3 +34,16 @@
   padding: 5px 10px;
   cursor: pointer;
 }
+.postedByDiv {
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.categoryDiv {
+  margin-top: 310px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}

@@ -29,6 +29,10 @@ const user = sequelize.define("users", {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  role: {
+    type: Sequelize.ENUM("admin", "user"),
+    defaultValue: "user",
+  },
 });
 
 // blogs schema
@@ -57,6 +61,34 @@ const blog = sequelize.define("blogs", {
       key: "id",
     },
   },
+  author_name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
 });
 
-module.exports = { sequelize, user, blog };
+// comments schema
+const comment = sequelize.define("comments", {
+  comment: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  blog_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  user_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    references: {
+      model: "users",
+      key: "id",
+    },
+  },
+  user_name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+});
+
+module.exports = { sequelize, user, blog, comment };

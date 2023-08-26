@@ -23,3 +23,38 @@
   font-size: 15px;
   margin-top: 20px;
 }
+
+.authorDetDiv > p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #969696;
+}
+.comments_container {
+  margin: auto;
+  margin-top: 50px;
+  width: 60%;
+}
+.commentsDiv {
+  border: 1px solid #ccc;
+  min-height: 50px;
+  padding: 10px;
+}
+.postCommentDiv {
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+.postCommentDiv > form {
+  display: flex;
+}
+.postCommentDiv > form > textarea {
+  outline: none;
+  border: 1px solid #969696;
+}
+.postCommentDiv > form > input:nth-child(2) {
+  background-color: rgb(29, 205, 211);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0px 10px;
+  height: 40px;
+}

@@ -3,23 +3,19 @@ import Navbar from "../../components/navbar/Navbar";
 import "./yourpost.css";
 
 import YourBlogCard from "../../components/yourBlogCard/YourBlogCard";
+import backendURL from "../../backendURL";
 
 function YourPost() {
   const [posts, setPosts] = useState([]);
   const [update, setUpdate] = useState(0);
 
   useEffect(() => {
-    fetch(
-      `http://13.53.207.156:4500/blog/authorblogs/${localStorage.getItem(
-        "userID"
-      )}`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      }
-    )
+    fetch(`${backendURL}/blog/authorblogs/${localStorage.getItem("userID")}`, {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setPosts(data))
       .catch((err) => console.log(err));
@@ -27,7 +23,7 @@ function YourPost() {
 
   async function deletePost(id) {
     let checkDltStatus = await fetch(
-      `http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500/blog/deleteblog/${id}`,
+      `${backendURL}/blog/deleteblog/${id}`,
       {
         method: "DELETE",
         headers: {

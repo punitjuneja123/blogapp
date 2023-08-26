@@ -8,6 +8,7 @@ const { user } = require("../model/db.model");
 
 const userRouter = express.Router();
 
+// ***********************Register a user********************************
 userRouter.post("/register", async (req, res) => {
   // getting data from body
   const { name, email, password } = req.body;
@@ -41,12 +42,7 @@ userRouter.post("/register", async (req, res) => {
   }
 });
 
-// userRouter.get("/testRoute", async (req, res) => {
-//   const { email } = req.body;
-//   let emailExist = await user.findOne({ where: { email } });
-//   res.send(emailExist);
-// });
-
+// ***********************login user********************************
 userRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
   // checking for user by email if already exists or not
@@ -56,10 +52,14 @@ userRouter.post("/login", async (req, res) => {
     bcrypt.compare(password, userData.password, (err, result) => {
       if (result) {
         // creating and sending token for authentication
-        let token = jwt.sign({ userID: userData.id }, process.env.secret);
+        let token = jwt.sign(
+          { userID: userData.id, userName: userData.name },
+          process.env.secret
+        );
         res.status(201).send({
           user: {
             userID: userData.id,
+            userName: userData.name,
             name: userData.name,
             email: userData.email,
           },
@@ -71,6 +71,25 @@ userRouter.post("/login", async (req, res) => {
     });
   } else {
     res.status(400).send("wrong credentials");
+  }
+});
+
+// ***********************get all users********************************
+userRouter.get("/allusers", async (req, res) => {
+  let users = await user.findAll();
+  res.send(users);
+});
+
+// ***********************update user's role********************************
+userRouter.patch("/updateRole/:id", async (req, res) => {
+  let id = req.params.id;
+  let role = req.body.role;
+  try {
+    await user.update({ role: role }, { where: { id } });
+    res.send("role updated");
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("something went wrong");
   }
 });
 

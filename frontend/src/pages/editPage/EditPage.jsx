@@ -4,11 +4,9 @@ import Navbar from "../../components/navbar/Navbar";
 import { useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import backendURL from "../../backendURL";
 
 function EditPage() {
-  let baseURL =
-    "http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500";
-
   // getting data of post when redirected
   const location = useLocation();
   let post = location.state;
@@ -39,7 +37,7 @@ function EditPage() {
   };
 
   async function updateBlog(obj) {
-    let updateData = await fetch(`${baseURL}/blog/updateblog/${post.id}`, {
+    let updateData = await fetch(`${backendURL}/blog/updateblog/${post.id}`, {
       method: "PATCH",
       headers: {
         Authorization: localStorage.getItem("token"),
@@ -110,8 +108,8 @@ function EditPage() {
           <option value="tech">Tech</option>
           <option value="science">Science</option>
           <option value="business">Business</option>
-          <option value="">Art + Design</option>
-          <option value="">We Humans</option>
+          <option value="Art+Design">Art + Design</option>
+          <option value="WeHumans">We Humans</option>
         </select>
         <br />
         <div>

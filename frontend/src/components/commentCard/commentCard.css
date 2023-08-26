@@ -1,0 +1,10 @@
+.comment_container {
+  margin-bottom: 20px;
+}
+.comment_container > p:nth-child(1) {
+  color: rgb(29, 205, 211);
+}
+.comment_container > p:nth-child(2) {
+  color: #909090;
+  margin-top: 5px;
+}

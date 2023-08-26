@@ -1,6 +1,7 @@
 import React from "react";
 import "./blogs.css";
 import { useNavigate } from "react-router-dom";
+import backendURL from "../../backendURL";
 
 function BlogsCard({ blog }) {
   const navigate = useNavigate();
@@ -10,14 +11,18 @@ function BlogsCard({ blog }) {
   return (
     <div className="blogCard">
       <div className="blogImgDiv">
-        <img
-          src={`http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500/images/${blog.image}`}
-          alt=""
-        />
+        <img src={`${backendURL}/images/${blog.image}`} alt="" />
+      </div>
+      <div className="categoryDiv">
+        <p>{blog.category}</p>
       </div>
       <div className="blogContentDiv">
         <h1>{blog.title}</h1>
         <p>{blog.content}</p>
+      </div>
+      <div className="postedByDiv">
+        <p>Posted By:</p>
+        <p>{blog.author_name}</p>
       </div>
       <div className="readMoreBtnDiv">
         <button onClick={readmoreBtnHandler}>Read More</button>

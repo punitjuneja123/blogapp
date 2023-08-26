@@ -4,11 +4,10 @@ import Navbar from "../../components/navbar/Navbar";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import backendURL from "../../backendURL";
 
 function Postblog() {
   const navigate = useNavigate();
-  let baseURL =
-    "http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500";
   // getting data form form
   const postFormHandler = (e) => {
     e.preventDefault();
@@ -23,11 +22,12 @@ function Postblog() {
     formData.append("content", content);
     formData.append("category", category);
     formData.append("userID", localStorage.getItem("userID"));
+    formData.append("userName", localStorage.getItem("userName"));
     // let obj = { image, title, content, category };
     console.log(formData.get("image"));
     // uploading blog
     axios
-      .post(`${baseURL}/blog/post`, formData, {
+      .post(`${backendURL}/blog/post`, formData, {
         headers: {
           Authorization: localStorage.getItem("token"),
           "content-Type": "multipart/form-data",
@@ -110,8 +110,8 @@ function Postblog() {
           <option value="tech">Tech</option>
           <option value="science">Science</option>
           <option value="business">Business</option>
-          <option value="">Art + Design</option>
-          <option value="">We Humans</option>
+          <option value="Art+Design">Art + Design</option>
+          <option value="WeHumans">We Humans</option>
         </select>
         <br />
         <div>

@@ -2,10 +2,9 @@ import React from "react";
 import "./loginSignup.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import backendURL from "../../backendURL";
 
 function Signup() {
-  let baseURL =
-    "http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500";
   const navigate = useNavigate();
 
   // getting data from signupform
@@ -20,7 +19,7 @@ function Signup() {
 
   // signing/regestering up user
   async function signupUser(obj) {
-    let userSignup = await fetch(`${baseURL}/user/register`, {
+    let userSignup = await fetch(`${backendURL}/user/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

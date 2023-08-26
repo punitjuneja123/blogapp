@@ -3,10 +3,9 @@ import "./loginSignup.css";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import backendURL from "../../backendURL";
 
 function Login() {
-  let baseURL =
-    "http://blogapp-backend-823671928.eu-north-1.elb.amazonaws.com:4500";
   const navigate = useNavigate();
 
   // getting data from login form
@@ -20,7 +19,7 @@ function Login() {
 
   // login user function
   async function loginUser(obj) {
-    let userLogin = await fetch(`${baseURL}/user/login`, {
+    let userLogin = await fetch(`${backendURL}/user/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,6 +30,7 @@ function Login() {
       let userDetails = await userLogin.json();
       localStorage.setItem("token", userDetails.token);
       localStorage.setItem("userID", userDetails.user.userID);
+      localStorage.setItem("userName", userDetails.user.userName);
       Swal.fire({
         icon: "success",
         title: `Yay! Login Successful 😍 welcome ${userDetails.user.name}`,
@@ -46,7 +46,7 @@ function Login() {
       });
     }
   }
-  
+
   return (
     <div className="loginSignupContainer">
       <form action="" onSubmit={loginForm}>

@@ -16,6 +16,7 @@ const { authentication } = require("./middleware/authentication.midleware");
 const { userRouter } = require("./routes/user.route");
 const { blogPRRouter } = require("./routes/blogPR.route");
 const { blogRouter } = require("./routes/blogs.route");
+const { commentRouter } = require("./routes/comments.routes");
 
 // Initial route
 app.get("/", (req, res) => {
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 
 app.use("/user", userRouter);
 app.use(blogRouter);
+app.use("/comment", commentRouter);
 app.use(authentication);
 app.use("/blog", blogPRRouter);
 
