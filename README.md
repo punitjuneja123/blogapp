@@ -1,15 +1,11 @@
-# Deployed URLs
-backend URL: http://aacd0444fd390474fa7ef67d6b5b4c4e-2142558196.eu-north-1.elb.amazonaws.com:4500/
-
-frontend URL: http://a53eccdd1d3994a55aeb2075769c0bbc-1010474656.eu-north-1.elb.amazonaws.com:3000/
-
----
 # Docker Hub
+
 Frontend: https://hub.docker.com/r/punitj123/blogapp-frontend
 
 Backend: https://hub.docker.com/r/punitj123/blogapp-backend
 
 ### To run docker images
+
 Frontend: docker run -p 3000:3000 punitj123/blogapp-frontend
 
 Backend: docker run -p 4500:4500 punitj123/blogapp-backend
@@ -68,9 +64,9 @@ Backend: docker run -p 4500:4500 punitj123/blogapp-backend
 
 1. create account in Docker
 2. create account in AWS
-2. Install AWS CLI Tool
-3. Install Eksctl Tool
-4. Install kubectl Tool
+3. Install AWS CLI Tool
+4. Install Eksctl Tool
+5. Install kubectl Tool
 
 ### `Steps`
 
