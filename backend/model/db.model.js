@@ -9,9 +9,6 @@ const sequelize = new Sequelize(
   {
     host: process.env.host,
     dialect: "mysql",
-    dialectOptions: {
-      ssl: "Amazon RDS",
-    },
   }
 );
 
