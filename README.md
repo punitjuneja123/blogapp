@@ -1,3 +1,9 @@
+# Deployed URLs
+
+backend: http://a7d6eb40ea5ee45d085aec6f08b76b2d-1297969621.ap-south-1.elb.amazonaws.com:4500/
+
+frontend: http://ae6b3d82979d04a42b657370ec92e57a-650691163.ap-south-1.elb.amazonaws.com:3000/
+
 # Docker Hub
 
 Frontend: https://hub.docker.com/r/punitj123/blogapp-frontend

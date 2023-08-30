@@ -5,6 +5,6 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: blog-app
+    app: blogapp-backend
   ports:
     - port: 4500

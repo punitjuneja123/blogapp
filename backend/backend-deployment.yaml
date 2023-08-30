@@ -6,14 +6,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: blog-app
+      app: blogapp-backend
   template:
     metadata:
       labels:
-        app: blog-app
+        app: blogapp-backend
     spec:
       containers:
         - name: blog-app
-          image: punitj123/blog-app
+          image: punitj123/blogapp-backend
           ports:
             - containerPort: 4500
